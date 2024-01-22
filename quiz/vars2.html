@@ -2,12 +2,18 @@
     <head>
         <script>
             // change the script such that i=0,1,2,3,4 is logged in the console
-            for (var i = 0; i < 5; i++) {
-                console.log("i=" + i)
+            // var - timeout part executes after main loop executes (timeout)
+                // accessible outside of loop, updates i overall
+            // let - the same thing; but i doesn't exist outside the loop
+                // instead of value of i at end of for loop (from the first compilation pass),
+                // gets value of i at loop
+                // prevents gloal edits to i
+            for (let i = 0; i < 5; i++) { // originally is var i = 0, not let i = 0
+
                 // setTimeout executes the function after 5 ms
                 setTimeout(function() {
-                    console.log(i);
-                }, 0);
+                    console.log(i); // disp;ays current value with let, not value after loop
+                }, 5);
             }
         </script>
     </head>

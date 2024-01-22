@@ -3,12 +3,11 @@
         <script>
             // Fix the error in the code below 
             let x = 1;
-            var y;
+            var y = 2;
             {
-                var y = 2;
                 y = y + 1;
                 console.log(x+y);
-                y = 2;
+                var y = 2;
             }
             console.log(x);
             console.log(y);
