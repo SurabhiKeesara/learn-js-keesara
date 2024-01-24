@@ -10,17 +10,23 @@
         <p id="demo"> DEMO </p>
     </div>
     <script>
+        this.msg = "hey world" // for arrow function
         const obj = {
             msg: 'Hello World',
-            hello:  function() {
+            hello: () => { // versus function(){ ... }
+            // function() {} can conceptualize this
+            // () => {} undefined because msg field is not defined in lexical (parent) scope;
+            //          cannot conceptualize 'this'
                 document.getElementById('demo').innerHTML += this.msg;
             }
         };
-        window.addEventListener('load', function() {
-            obj.hello();
+        window.addEventListener('load', function() { // if this is () => {}, scope is window
+            alert(this);
+            obj.hello(); // bound to window (scope is window)
         });
-        document.getElementById('btn').addEventListener('click', function() {
-            obj.hello();
+        document.getElementById('btn').addEventListener('click', function() {// if this is () => {}, scope is window
+            alert(this);
+            obj.hello(); // bound to button (scope is button)
         });
     </script>
 </body>

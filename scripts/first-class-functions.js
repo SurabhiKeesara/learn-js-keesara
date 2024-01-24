@@ -2,8 +2,8 @@ function foo(sum, x, y) {
  return sum(x,y);
 }
 
-function sum(a,b) {
+function sum(a,b) { 
  return a + b;
 }
 
-console.log(foo(sum,2,3));
+console.log(foo(sum,2,3)); // function output is linked to foo

@@ -5,7 +5,7 @@ const person = {
     lastName: 'Doe',
     id: 5544,
     fullName: function() {
-        return this.firstName + ' ' + this.lastName;
+        return this.firstName + ' ' + this.lastName; // of this class
     }
 }
 

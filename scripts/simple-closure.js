@@ -3,8 +3,14 @@ function makeFunc() {
     function dispName() {
         console.log(name);
     }
-    return dispName;
+    return dispName; // returns body of function and lexical scope
+    // dispName();
 }
 
 const f = makeFunc();
-f();
+//can execute function outside of scope
+// f is console.log(name) and name = ...
+    // the body of the function (dispName body)
+    // the lexical scope of the function (name)
+// f is a closure, not a function
+f(); // equivalent of dispName()
