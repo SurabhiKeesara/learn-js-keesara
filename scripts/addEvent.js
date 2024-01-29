@@ -1,7 +1,8 @@
 window.onload = function() {
     let x = document.getElementById('myBtn');
-    x.addEventListener('mouseover', myFunction);
-    x.addEventListener('click', mySecondFunction);
+    x.addEventListener('mouseover', myFunction); // closure
+    x.addEventListener('click', mySecondFunction); // adding multiple event listeners
+    // if 'click' has another function, then would be executed consecutively in order defined
     x.addEventListener('mouseout', myThirdFunction);
 }
 
